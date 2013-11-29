@@ -1,0 +1,6 @@
+# generated files
+libs/
+obj/
+
+# Moodstocks Android Wrapper source files, copied by make.sh
+src/com/moodstocks/android/*
