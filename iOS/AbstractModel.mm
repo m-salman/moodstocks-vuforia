@@ -5,7 +5,7 @@
 @implementation AbstractModel
 
 - (void)dealloc {
-    if (_scale) delete _scale;
+    if (_scale) delete [] _scale;
 }
 
 - (BOOL)isDynamic {
