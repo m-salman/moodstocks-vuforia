@@ -47,11 +47,29 @@ if [[ -z $MOODSTOCKS_SDK_ANDROID ]]; then
   exit
 fi
 
-# Build !
-
+# Export value used by Android.mk:
 export VFR_SDK="../$result"
-ndk-build clean
-ndk-build
+
+# Check ndk-build can be found
+
+NDK_BUILD=$(which ndk-build)
+if [[ -z ${NDK_BUILD} ]]; then
+  if [[ -z $ANDROID_NDK ]]; then
+    echo "\`ndk-build\` command not found!"
+    echo "Please add it to your path or specify the location of"
+    echo "your Android NDK using:"
+    echo " $ export ANDROID_NDK=path/to/android/ndk"
+    echo " $ bash make.sh"
+    exit
+  else
+    NDK_BUILD=$ANDROID_NDK/ndk-build
+  fi
+fi
+
+# Build!
+
+$NDK_BUILD clean
+$NDK_BUILD
 
 # Copy Moodstocks files, as they were erased by `ndk-build clean`
 
