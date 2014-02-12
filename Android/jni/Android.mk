@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := QCAR-prebuilt
-LOCAL_SRC_FILES = $(VFR_SDK)/build/lib/$(TARGET_ARCH_ABI)/libQCAR.so
+LOCAL_SRC_FILES = $(VFR_SDK)/build/lib/$(TARGET_ARCH_ABI)/libVuforia.so
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/$(VFR_SDK)/build/include
 include $(PREBUILT_SHARED_LIBRARY)
 
