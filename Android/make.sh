@@ -73,6 +73,5 @@ $NDK_BUILD
 
 # Copy Moodstocks files, as they were erased by `ndk-build clean`
 
-cp $MOODSTOCKS_SDK_ANDROID/libs/armeabi/* libs/armeabi/
 cp $MOODSTOCKS_SDK_ANDROID/libs/armeabi-v7a/* libs/armeabi-v7a/
 cp -R $MOODSTOCKS_SDK_ANDROID/src/* src/
