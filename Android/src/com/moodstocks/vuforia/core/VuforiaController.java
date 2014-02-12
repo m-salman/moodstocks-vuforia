@@ -226,7 +226,7 @@ public class VuforiaController {
   /** Static block to load native libraries */
   static
   {
-    System.loadLibrary("QCAR");
+    System.loadLibrary("Vuforia");
     System.loadLibrary("VuforiaWrapper");
     System.loadLibrary("MoodstocksVuforia");
   }
