@@ -12,7 +12,7 @@ dataset_nb(0),
 dataset_capacity(INITIAL_DATASET_NUMBER)
 {
   QCAR::TrackerManager& trackerManager = QCAR::TrackerManager::getInstance();
-  trackerManager.initTracker(QCAR::Tracker::IMAGE_TRACKER);
+  trackerManager.initTracker(QCAR::ImageTracker::getClassType());
   datasets = (QCAR::DataSet **)calloc(INITIAL_DATASET_NUMBER, sizeof(QCAR::DataSet *));
   names = (char **)calloc(INITIAL_DATASET_NUMBER, sizeof(char *));
 }
@@ -28,7 +28,7 @@ MSVTracker::~MSVTracker()
   free(datasets);
   free(names);
   QCAR::TrackerManager& trackerManager = QCAR::TrackerManager::getInstance();
-  trackerManager.deinitTracker(QCAR::Tracker::IMAGE_TRACKER);
+  trackerManager.deinitTracker(QCAR::ImageTracker::getClassType());
 }
 
 void
@@ -151,6 +151,6 @@ MSVTracker::getTracker()
 {
   QCAR::TrackerManager& trackerManager = QCAR::TrackerManager::getInstance();
   return static_cast<QCAR::ImageTracker*> (
-    trackerManager.getTracker(QCAR::Tracker::IMAGE_TRACKER)
+    trackerManager.getTracker(QCAR::ImageTracker::getClassType())
   );
 }
