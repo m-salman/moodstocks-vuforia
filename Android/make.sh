@@ -4,7 +4,7 @@
 
 if [[ -z $VUFORIA_SDK_ANDROID ]]; then
   echo "Please provide the path to your version of the Vuforia SDK!"
-  echo "Minimum supported version: 2.0.30"
+  echo "Minimum supported version: 2.8.7"
   echo " $ export VUFORIA_SDK_ANDROID=path/to/vuforia-sdk-android-*-*-*/"
   echo " $ bash make.sh"
   exit
